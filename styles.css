@@ -1,0 +1,72 @@
+:root {
+  --rich-black: #000814ff;
+  --oxford-blue: #001d3dff;
+  --yale-blue: #003566ff;
+  --mikado-yellow: #ffc300ff;
+  --gold: #ffd60aff;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation bar */
+nav {
+  background-color: var(--rich-black);
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: var(--oxford-blue);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+/* Section styling */
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+/* Footer */
+footer {
+  background-color: var(--mikado-yellow);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
