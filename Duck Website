@@ -1,0 +1,16 @@
+Duck Website
+
+We are developing a user-friendly, visually appealing website for a small boutique that specializes in rubber ducks. The site will showcase the shop's unique and customizable products, including various themed rubber ducks for collectors and enthusiasts. Key features will include an online store with easy navigation, a smooth checkout process, and options for customers to browse collections based on categories like "holiday-themed," "vintage," and "novelty ducks." The goal is to create a memorable online experience that reflects the fun, playful nature of the brand, while also supporting the shop's sales and customer engagement.
+
+
+Duck Logo
+https://www.imagella.com/cdn/shop/products/9e50599514907a3ae0932610b7e0a5d2.jpg?v=1692479809
+
+
+Color Palette
+/* CSS HEX */
+--rich-black: #000814ff;
+--oxford-blue: #001d3dff;
+--yale-blue: #003566ff;
+--mikado-yellow: #ffc300ff;
+--gold: #ffd60aff;
