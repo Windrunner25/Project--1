@@ -6,7 +6,7 @@
     <v-btn
       v-for="(item, index) in menuItems"
       :key="index"
-      text
+      :text
       @click="handleMenuClick(item)"
       :to="`/${item.address}`"
     >
@@ -18,6 +18,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+interface MenuItem {
+  name: string;
+  address: string;
+}
+
 export default defineComponent({
   name: "AppBar",
   data() {
@@ -26,13 +31,14 @@ export default defineComponent({
       menuItems: [
         { name: "Home", address: "" }, // Maps to the root path '/'
         { name: "Shop", address: "shop" },
-      ],
+      ] as MenuItem[], // Ensures menuItems is explicitly typed
     };
   },
   methods: {
-    handleMenuClick(item: string) {
-      console.log(`${item} clicked`);
-      // Implement your navigation logic here
+    handleMenuClick(item: MenuItem) {
+      // Using MenuItem interface
+      console.log(`${item.name} clicked`);
+      // Implement your navigation logic here, if needed
     },
   },
 });

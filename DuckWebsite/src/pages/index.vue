@@ -3,6 +3,7 @@
     <Toolbar />
     <Title />
     <Carousel />
+    <Footer />
   </div>
 </template>
 
@@ -13,10 +14,10 @@ import PageTitle from "../components/title.vue"; // Import your custom PageTitle
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Title from "@/components/title.vue"; // Adjust the path according to your folder structure
-import Toolbar from "@/components/toolbar.vue"; // Adjust the path according to your folder structure
-import Carousel from "@/components/carousel.vue"; // Adjust the path according to your folder structure
-
+import Title from "../components/title.vue"; // Adjust the path according to your folder structure
+import Toolbar from "../components/toolbar.vue"; // Adjust the path according to your folder structure
+import Carousel from "../components/carousel.vue"; // Adjust the path according to your folder structure
+import Footer from "../components/footer.vue";
 
 export default defineComponent({
   name: "Home",

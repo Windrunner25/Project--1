@@ -38,5 +38,8 @@
 </template>
 
 <script lang="ts">
-//
-</script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Carousel", // Ensure the name matches what you're importing
+});</script>
