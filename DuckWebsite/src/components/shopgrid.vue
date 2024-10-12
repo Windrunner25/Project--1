@@ -1,7 +1,7 @@
-<!-- <template>
+<template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="4" lg="3">
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/chariotduck.jpeg"
@@ -9,6 +9,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/christmasduck.jpeg"
@@ -16,6 +18,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/classic-duck.jpeg"
@@ -23,6 +27,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/gamer-duck.jpeg"
@@ -30,6 +36,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/glitterduck.jpeg"
@@ -37,6 +45,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/goldenduck.jpeg"
@@ -44,6 +54,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/monkeyduck.jpeg"
@@ -51,9 +63,13 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img src="@/assets/pinkduck.jpeg" alt="Image 1" aspect-ratio="1.7" />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/pirateduck.jpeg"
@@ -61,6 +77,8 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/policeduck.jpeg"
@@ -68,9 +86,13 @@
             aspect-ratio="1.7"
           />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img src="@/assets/redduck.jpeg" alt="Image 1" aspect-ratio="1.7" />
         </v-card>
+      </v-col>
+      <v-col cols="4" class="d-flex align-center justify-center">
         <v-card>
           <img
             src="@/assets/spider-duck.jpeg"
@@ -91,10 +113,10 @@
 .v-img {
   object-fit: cover;
 }
-</style> -->
+</style>
 
 **************
-
+<!-- 
 <template>
   <v-container>
     <v-row>
@@ -114,8 +136,8 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
-  <!-- <v-container>
+  </v-container> -->
+<!-- <v-container>
     <v-row>
       <v-col
         cols="12"
@@ -130,6 +152,7 @@
       </v-col>
     </v-row>
   </v-container> -->
+<!--   
 </template>
 
 <script>
@@ -142,7 +165,8 @@ export default {
       return `@/assets/${imageLoc}`;
     },
   },
-};
+}; -->
+<!-- 
 // export default {
 //   data() {
 //     return {
@@ -163,10 +187,10 @@ export default {
 //     };
 //   },
 // };
-</script>
+// </script>
 
-<style scoped>
-.v-img {
-  object-fit: cover;
-}
-</style>
+// <style scoped>
+// .v-img {
+//   object-fit: cover;
+// }
+// </style> -->

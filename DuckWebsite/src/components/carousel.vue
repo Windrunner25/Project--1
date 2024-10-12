@@ -7,7 +7,7 @@
     rounded
   >
     <div>
-      <h2 class="text-h7 font-weight-black text-orange mb-5 mt-5">
+      <h2 class="text-h7 font-weight-black text-orange mt-5">
         Popular Products
       </h2>
     </div>

@@ -1,22 +1,22 @@
-// server.js
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const app = express();
 const port = 3000;
+const cors = require("cors");
 
-// Middleware to parse form data (application/x-www-form-urlencoded)
-app.use(bodyParser.urlencoded({ extended: false }));
+// Use CORS middleware
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));s
+// Middleware to parse JSON body
+app.use(bodyParser.json()); // Add this line to parse JSON input
 
 // Route to handle form submissions
 app.post("/submit-form", (req, res) => {
   const formData = req.body;
-
   // Save form data to a file
-  const dataToSave = JSON.stringify(formData);
+  const dataToSave = JSON.stringify(formData, null, 2); // Pretty print JSON
 
-  // You can use fs to write data to a file (data.txt or similar)
   fs.writeFile("form-data.txt", dataToSave, (err) => {
     if (err) {
       console.error("Error saving form data:", err);
@@ -29,5 +29,5 @@ app.post("/submit-form", (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}/shop`);
 });

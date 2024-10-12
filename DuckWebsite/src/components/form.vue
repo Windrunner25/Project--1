@@ -1,71 +1,129 @@
- <!-- This section defines the HTML structure of the component -->
 <template>
-    <div>
-        <h2>Order Rubber Ducks</h2>
-
-        <form @submit.prevent="submitForm">
-            <!-- First Name Input -->
-            <label for="firstName">First Name: </label>
-            <input type="text" v-model="formData.firstName" id="firstName" required />
-    
-            <!-- Last Name Input -->
-            <label for="lastName">Last Name: </label>
-            <input type="text" v-model="formData.lastName" id="lastName" required />
-    
-            <!-- Email Input -->
-            <label for="email">Email: </label>
-            <input type="email" v-model="formData.email" id="email" required />
-    
-            <!-- Number of Rubber Ducks Input -->
-            <label for="ducks"># of Rubber Ducks: </label>
-            <input type="number" v-model="formData.ducks" id="ducks" min="1" required />
-    
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
+    <v-container>
+      <v-sheet
+        class="d-flex align-center justify-center flex-wrap text-center mx-auto mt-5 mb-5"
+        elevation="4"
+        height="100"
+        max-width="800"
+        width="100%"
+        rounded
+      >
+        <div>
+          <h2 class="text-h4 font-weight-black text-orange">Order Ducks</h2>
+        </div>
+      </v-sheet>
+      <v-form @submit.prevent="submitForm">
+        <v-row>
+          <v-col cols="12">
+            <v-text-field
+              label="Your Name"
+              outlined
+              v-model="formData.name" 
+              :class="{ 'custom-outline': true }"
+            />
+          </v-col>
+          <v-col cols="12">
+            <v-text-field
+              label="Your Email"
+              outlined
+              v-model="formData.email" 
+              :class="{ 'custom-outline': true }"
+            />
+          </v-col>
+          <v-col cols="12">
+            <v-select
+              label="Duck"
+              :items="items"
+              outlined
+              v-model="formData.duck" 
+              :class="{ 'custom-outline': true }"
+            />
+          </v-col>
+          <v-col cols="12">
+            <v-textarea
+              label="Comments?"
+              outlined
+              v-model="formData.comments" 
+              :class="{ 'custom-outline': true }"
+              rows="4"
+            />
+          </v-col>
+          <v-col cols="12">
+            <v-btn color="orange" type="submit">Submit</v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </v-container>
+  </template>
   
-        <!-- Confirmation Message -->
-        <p v-if="submitted">
-            Thank you, {{ submittedData.firstName }}! Your order for {{ submittedData.ducks }} rubber ducks has been submitted.
-        </p>
-    </div>
-</template>
-
-
-<script>
-    export default {
-        // This function defines the reactive data properties for the component
-        data() {
-            return {
-                formData: {
-                    firstName: '',  // Holds the first name input
-                    lastName: '',   // Holds the last name input
-                    email: '',      // Holds the email name input
-                    ducks: 1,       // Default number of ducks to 1
-                },
-                submitted: false,    // Tracks whether the form has been submitted
-                submittedData: {}   // Holds the data of the submitted form
-            };
+  <script lang="ts">
+  export default {
+    name: "StackedForm",
+    data() {
+      return {
+        formData: { // Create a data object to hold form inputs
+          name: '',
+          email: '',
+          duck: '',
+          comments: ''
         },
-        methods: {
-            // This method is called when the form is submitted
-            submitForm() {
-
-                // Logs the form data to the console for debugging
-                console.log('Form Data:', this.formData);
-
-                // Store the submitted data in a separate property
-                this.submittedData = {...this.formData};
-
-                // Display submission message
-                this.submitted = true;
-
-                // Clear the form after submission
-                this.formData.firstName = '';
-                this.formData.lastName = '';
-                this.formData.email = '';
-                this.formData.ducks = 1; // Reset the number of ducks
-            }
+        items: [
+          "Chariot",
+          "Christmas",
+          "Classic",
+          "Gamer",
+          "Glitter",
+          "Golden",
+          "Monkey",
+          "Pink",
+          "Pirate",
+          "Police",
+          "Red",
+          "Spider",
+        ],
+      };
+    },
+    methods: {
+      async submitForm() {
+        try {
+          const response = await fetch("http://localhost:3000/submit-form", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json", // Use JSON format
+            },
+            body: JSON.stringify(this.formData), // Convert formData to JSON
+          });
+  
+          const result = await response.text();
+          console.log(result); // Log response from the server
+        } catch (error) {
+          console.error("Error submitting form:", error);
         }
-    };
-</script>
+      },
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .custom-outline .v-input__control {
+    border: 2px solid #ff5722; /* Set your desired color */
+    border-radius: 4px; /* Optional: adjust border radius */
+  }
+  
+  .custom-outline .v-input__control:hover {
+    border-color: #f44336; /* Change color on hover */
+  }
+  
+  .custom-outline .v-input--is-focused .v-input__control {
+    border-color: #4caf50; /* Change color when focused */
+  }
+  
+  .custom-outline .v-input__label {
+    color: #ff5722; /* Set label color */
+  }
+  
+  .custom-outline .v-input__slot {
+    border-bottom: none; /* Remove default bottom border */
+  }
+  </style>
+  
