@@ -7,13 +7,14 @@ const cors = require("cors");
 
 // Use CORS middleware
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));s
-// Middleware to parse JSON body
-app.use(bodyParser.json()); // Add this line to parse JSON input
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 
 // Route to handle form submissions
-app.post("/submit-form", (req, res) => {
+app.post("/shop/submit-form", (req, res) => {
+  console.log("Form data received:", req.body);
   const formData = req.body;
+
   // Save form data to a file
   const dataToSave = JSON.stringify(formData, null, 2); // Pretty print JSON
 
@@ -27,7 +28,12 @@ app.post("/submit-form", (req, res) => {
   });
 });
 
+// 404 error handling (Place this AFTER all other routes)
+app.use((req, res, next) => {
+  res.status(404).send("Route not found");
+});
+
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}/shop`);
+  console.log(`Server running on http://localhost:${port}/`);
 });
